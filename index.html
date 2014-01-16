@@ -1,4 +1,4 @@
-<html>
+<html x-ng-app="">
 <head>
 	<title>WCTicketExchange</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -6,10 +6,25 @@
 	<script	type ="text/javascript" src="script.js"></script>
 </head>
 <body>
-	<div id="main">
-		<h2>World Cup Ticket Exchange</h2>
-		<div id="checkout">{{???}} of Tickets Available<br /><a href="" x-ng-click="purchased()">Click to Buy Selected Tickets</a></div>
-
+	<h2>World Cup Ticket Exchange</h2>
+	<div id="teams"><img src="http://worldsoccertalk.com/wp-content/uploads/2013/12/world-cup-draw-fifa.png"></div>
+	
+	<div id="main" x-ng-controller="ticketsCtrl">
+		
+		Submit Tickets for Sale
+		<form ng-submit="addNewTicket()">
+			<input type="text" size=10 ng-model="newPrice" placeholder="Price" />   <input type="text" size=20 ng-model="newHome" placeholder="Home Team" /> versus <input type="text" size=20 ng-model="newAway" placeholder="Away Team" /><br />
+			<input type="submit" value="Post">
+		</form>
+		
+		Select Tickets for Purchase
+		<br /><a href="" x-ng-click="purchased()">Click to Buy Selected Tickets</a>
+		<ul>
+			<li ng-repeat="ticket in tickets">
+			<input type="checkbox" x-ng-model="ticket.purchased" />
+			${{ticket.price}} | {{ticket.home}}   vs.   {{ticket.away}}
+			</li>
+		</ul>
 	</div>
 </body>
 </html>

@@ -1,0 +1,32 @@
+body {	
+	background: green;
+	font-family: "Century Gothic";
+	font-size: 12px;
+}
+
+h2 {
+	color: white;
+	margin: 10px auto;
+}
+
+#teams {
+	position: absolute;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+#main {
+	position: absolute;
+	float: left;
+	margin-left: 640px;
+	margin-top: 0px;
+	padding: 5px;
+	width: 400px;
+	height: 281px;
+	background-color: lightgray;
+	border: darkgray;
+	border-radius: 1px;
+}
+
+li {
+	list-style: none;
+}
